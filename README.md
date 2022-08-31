@@ -27,5 +27,5 @@ To execute the CEClient automatically, without need to open the windows to click
 1. Right click on `ceclient.exe`;
 2. Select `Create Shortcut`;
 3. Open the properties of the shortcut file created;
-4. In the command line (Target), add the parameter `--autoexec` after `/ce.exe`;
+4. In the command line (Target), add the parameter `--autoexec` after `/ceclient.exe`; It will become: `C:/.../ceclient.exe --autoexec`
 5. Execute the shortcut, and the game will be connected automatically.
