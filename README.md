@@ -32,7 +32,7 @@ To add or delete a server from CEClient tool, go to `Menu > Server List Configur
 
 ## Auto Execution
 
-To execute the CEClient automatically, execute the file `autoexec.bat` located in the same directory of the `ceclient.exe` file. If can create a shortcut to this file to customize the icon and the name, and make easier the way to connect automatically.
+To execute the CEClient automatically, execute the file `autoexec.bat` located in the same directory of the `ceclient.exe` file. You can create a shortcut to this file to customize the icon and the name of the file, and make easier the way to connect automatically to the server.
 
 ## Spoilers
 
