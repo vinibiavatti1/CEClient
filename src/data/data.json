@@ -1,0 +1,15 @@
+{
+    "nickname": "CEPlayer",
+    "fov": 200,
+    "mousesens": 9,
+    "viewdist": 3000,
+    "latency": 0,
+    "server_list": [
+        {
+            "server_name": "codenameeaglemultiplayer.com",
+            "server_ip": "89.38.98.12:24711"
+        }
+    ],
+    "last_server_ip": null,
+    "last_server_index": 0
+}

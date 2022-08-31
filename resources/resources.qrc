@@ -1,0 +1,12 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file alias="ce-icon">images/ce_icon.png</file>
+        <file alias="run-icon">icons/world_go.png</file>
+        <file alias="save-icon">icons/disk.png</file>
+        <file alias="config-icon">icons/cog.png</file>
+		<file alias="world-icon">icons/world.png</file>
+		<file alias="world-add">icons/world_add.png</file>
+		<file alias="world-delete">icons/world_delete.png</file>
+    </qresource>
+</RCC>
