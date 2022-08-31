@@ -86,7 +86,7 @@ class ConfigFrame(QFrame):
         # Fov
         self.__grid.addWidget(QLabel(
             f'Field of View (fov) (100 ~ 500) ' +
-            f'(Default: {GameConfigService.DEFAULT_FOV})', self
+            f'(Default: {GameConfigService.DEFAULT_FOV}):', self
         ))
         self.__fov_field = QSpinBox(self)
         self.__fov_field.setMinimum(100)
@@ -97,7 +97,7 @@ class ConfigFrame(QFrame):
         # Mouse Sensitivity
         self.__grid.addWidget(QLabel(
             f'Mouse Sensitivity (mousesens) (1 ~ 20) ' +
-            f'(Default: {GameConfigService.DEFAULT_MOUSE_SENS})', self
+            f'(Default: {GameConfigService.DEFAULT_MOUSE_SENS}):', self
         ))
         self.__mousesens_field = QSpinBox(self)
         self.__mousesens_field.setMinimum(1)
@@ -108,7 +108,7 @@ class ConfigFrame(QFrame):
         # View Dist
         self.__grid.addWidget(QLabel(
             f'View Distance (viewdist) (100 ~ 5000) ' +
-            f'(Default: {GameConfigService.DEFAULT_VIEWDIST})', self
+            f'(Default: {GameConfigService.DEFAULT_VIEWDIST}):', self
         ))
         self.__viewdist_field = QSpinBox(self)
         self.__viewdist_field.setMinimum(100)
@@ -119,7 +119,7 @@ class ConfigFrame(QFrame):
         # Latency
         self.__grid.addWidget(QLabel(
             f'Latency (latency) (0 ~ 8) ' +
-            f'(Default: {GameConfigService.DEFAULT_LATENCY})', self
+            f'(Default: {GameConfigService.DEFAULT_LATENCY}):', self
         ))
         self.__latency_field = QSpinBox(self)
         self.__latency_field.setMinimum(0)

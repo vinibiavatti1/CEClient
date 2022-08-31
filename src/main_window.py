@@ -1,13 +1,12 @@
 """
 Main window module.
 """
-from tkinter import Frame
 from app_info import AppInfo
 from enums.frame_enum import FrameEnum
+from frames.about_frame import AboutFrame
 from frames.config_frame import ConfigFrame
 from frames.connection_frame import ConnectionFrame
 from frames.server_list_frame import ServerListFrame
-import qrc_resources
 from typing import Any
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (
@@ -17,9 +16,8 @@ from PyQt5.QtWidgets import (
     QMenu,
     QMenuBar,
     QStatusBar,
-    QToolBar,
-    QWidget,
 )
+import qrc_resources
 
 
 class MainWindow(QMainWindow):
@@ -55,6 +53,8 @@ class MainWindow(QMainWindow):
             self.setCentralWidget(ConfigFrame(self))
         elif frame == FrameEnum.SERVER_LIST_FRAME:
             self.setCentralWidget(ServerListFrame(self))
+        elif frame == FrameEnum.ABOUT_FRAME:
+            self.setCentralWidget(AboutFrame(self))
 
     ###########################################################################
     # Registrations
@@ -70,6 +70,8 @@ class MainWindow(QMainWindow):
             QAction(QIcon(':config-icon'), 'Game Configuration', self)
         self.__server_list_config_action = \
             QAction(QIcon(':config-icon'), 'Server List Configuration', self)
+        self.__about_action = \
+            QAction(QIcon(':info'), 'About', self)
 
     def __register_handlers(self) -> None:
         """
@@ -83,6 +85,9 @@ class MainWindow(QMainWindow):
         )
         self.__server_list_config_action.triggered.connect(
             lambda: self.set_central_widget(FrameEnum.SERVER_LIST_FRAME)
+        )
+        self.__about_action.triggered.connect(
+            lambda: self.set_central_widget(FrameEnum.ABOUT_FRAME)
         )
 
     ###########################################################################
@@ -98,6 +103,7 @@ class MainWindow(QMainWindow):
         self.__menu.addAction(self.__connection_action)
         self.__menu.addAction(self.__config_action)
         self.__menu.addAction(self.__server_list_config_action)
+        self.__menu.addAction(self.__about_action)
         self.__menu_bar.addMenu(self.__menu)
         self.setMenuBar(self.__menu_bar)
 
