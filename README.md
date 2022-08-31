@@ -1,2 +1,21 @@
-# CE Client (CEC)
-Codename Eagle client software to facilitate the setup and the server connection to play the game on multi player
+# CE Client
+
+The CEClient is a tool that permits to the player manage server connections and client configurations, to connect in a game server. If you want to host a server, or manipulate versions of the game, please, take a look on [CEHub](https://github.com/vinibiavatti1/CEHub).
+
+## Getting Started
+
+To start using the CEClient, just follow the steps below (It is easy and simple).
+
+1. Download the last release of the CEClient;
+2. Extract the content of the zip file (ceclient.zip);
+3. Execute ceclient.exe;
+
+In the first start, the Codename Eagle Multiplayer Demo version will be installed automatically in your environment. It can take a few seconds to open the application. After this, just enter your nickname, select the server you want to play and click on **Connect!**
+
+## Game Configurations
+
+To configure some client stuff (mouse sensivity, view distance, etc.), open the CEClient tool, and open the configuration frame `Menu > Game Configuration`. On this window, you can configure the parameters. After finish, click in the `Save` button to save the settings.
+
+## Server List Configuration
+
+To add or delete a server from CEClient tool, go to `Menu > Server List Configuration`. There, you can add new server connections entering the data on the `Server Name` and `Server Address` fields. You also can delete some server from de list using the `Delete Server` option.
