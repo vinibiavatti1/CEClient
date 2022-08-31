@@ -32,19 +32,9 @@ To add or delete a server from CEClient tool, go to `Menu > Server List Configur
 
 ## Auto Execution
 
-To execute the CEClient automatically, without need to open the windows to click on `Connect!` button, you can create a shortcut to `ceclient.exe`, and set the `--autoexec` parameter. Take a look:
-
-1. Right click on `ceclient.exe`;
-2. Select `Create Shortcut`;
-3. Open the properties of the shortcut file created;
-4. In the command line (Target), add the parameter `--autoexec` after `/ceclient.exe`. It will become: `C:/.../ceclient.exe --autoexec`;
-5. Execute the shortcut, and the game will be connected automatically.
-
-<img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/1.png" width="400" alt="CEClient image 1"/>
+To execute the CEClient automatically, execute the file `autoexec.bat` located in the same directory of the `ceclient.exe` file. If can create a shortcut to this file to customize the icon and the name, and make easier the way to connect automatically.
 
 ## Spoilers
-
-
 
 <img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/2.png" width="400" alt="CEClient image 2"/>
 
