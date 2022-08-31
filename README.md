@@ -34,6 +34,13 @@ To add or delete a server from CEClient tool, go to `Menu > Server List Configur
 
 To execute the CEClient automatically, execute the file `autoexec.bat` located in the same directory of the `ceclient.exe` file. You can create a shortcut to this file to customize the icon and the name of the file, and make easier the way to connect automatically to the server.
 
+## Take a Look!
+
+- Codename Eagle Multiplayer server: https://codenameeaglemultiplayer.com/
+- Discord Community: https://discord.gg/VGW9AaQJne
+- Reddit Community: https://www.reddit.com/r/CodenameEagle/
+- No Vinib's Land (NVL) Map Project: https://github.com/vinibiavatti1/CodenameEagleNVLMap
+
 ## Spoilers
 
 <img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/2.png" width="400" alt="CEClient image 2"/>
