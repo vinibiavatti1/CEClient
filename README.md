@@ -24,7 +24,7 @@ In the first start, the Codename Eagle Multiplayer Demo version will be installe
 
 ## Game Configurations
 
-To configure some client stuff (mouse sensivity, view distance, etc.), open the CEClient tool, and open the configuration frame `Menu > Game Configuration`. On this window, you can configure the parameters. After finish, click in the `Save` button to save the settings.
+To configure some client stuff (mouse sensitivity, view distance, etc.), open the CEClient tool, and open the configuration frame `Menu > Game Configuration`. On this window, you can configure the parameters. After finish, click in the `Save` button to save the settings.
 
 ## Server List Configuration
 
