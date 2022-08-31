@@ -1,4 +1,14 @@
-# CE Client
+<p align="center">
+  <a href="https://github.com/vinibiavatti1/CEHub">
+    <img src="https://raw.githubusercontent.com/vinibiavatti1/CEHub/main/resources/images/ce_icon.png" width="100" />
+  </a>
+</p>
+
+<h3 align="center">CEClient</h3>
+
+<p align="center">
+  Codename Eagle Client Tool
+</p>
 
 The CEClient is a tool that permits to the player manage server connections and client configurations, to connect in a game server. If you want to host a server, or manipulate versions of the game, please, take a look on [CEHub](https://github.com/vinibiavatti1/CEHub).
 
@@ -29,3 +39,15 @@ To execute the CEClient automatically, without need to open the windows to click
 3. Open the properties of the shortcut file created;
 4. In the command line (Target), add the parameter `--autoexec` after `/ceclient.exe`. It will become: `C:/.../ceclient.exe --autoexec`;
 5. Execute the shortcut, and the game will be connected automatically.
+
+<img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/1.png" width="400" alt="CEClient image 1"/>
+
+## Spoilers
+
+
+
+<img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/2.png" width="400" alt="CEClient image 2"/>
+
+<img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/3.png" width="400" alt="CEClient image 3"/>
+
+<img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/4.png" width="400" alt="CEClient image 4"/>
