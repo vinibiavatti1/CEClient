@@ -110,5 +110,6 @@ class ConnectionFrame(QFrame):
         data = DataService.get_data()
         data.last_server_ip = server_ip
         data.last_server_index = self.__server_list.currentIndex()
+        data.nickname = nickname
         DataService.save_data(data)
         ProcessService.execute(server_ip, nickname)
