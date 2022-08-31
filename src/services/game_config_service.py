@@ -10,7 +10,7 @@ class GameConfigService:
     Game configuration service.
     """
 
-    DEFAULT_FOV: int = 200
+    DEFAULT_FOV: int = 235
     DEFAULT_MOUSE_SENS: int = 9
     DEFAULT_LATENCY: int = 0
     DEFAULT_VIEWDIST: int = 3000

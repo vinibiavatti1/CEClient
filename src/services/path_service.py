@@ -29,7 +29,14 @@ class PathService:
         """
         Return game folder path.
         """
-        return os.path.join(cls.get_current_dir(), 'data', 'data.json')
+        return os.path.join(cls.get_current_dir(), 'data')
+
+    @classmethod
+    def get_data_json_path(cls) -> str:
+        """
+        Return game folder path.
+        """
+        return os.path.join(cls.get_data_path(), 'data.json')
 
     @classmethod
     def get_default_cfg_path(cls) -> str:

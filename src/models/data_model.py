@@ -15,7 +15,7 @@ class DataModel:
         Create a new DataModel.
         """
         self.nickname = 'CEPlayer'
-        self.fov = 200
+        self.fov = 235
         self.mousesens = 9
         self.viewdist = 3000
         self.latency = 0
