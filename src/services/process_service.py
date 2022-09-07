@@ -13,6 +13,7 @@ class ProcessService:
     """
 
     CE_PROCESS_NAME: str = 'ce.exe'
+    CE_PORT: str = '24711'
     LOBBY_PROCESS_NAME: str = 'lobby.exe'
 
     @classmethod

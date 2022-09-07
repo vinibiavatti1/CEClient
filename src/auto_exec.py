@@ -22,8 +22,8 @@ class AutoExec:
         if server_ip is None:
             if len(data.server_list) == 0:
                 raise Exception(
-                    'No server found to connect. Please, register a server ' +
-                    'in data.json'
+                    'No server found to connect. Please, open the ' +
+                    'application and register at least one server.'
                 )
             server_ip = data.server_list[0]['server_ip']
         nickname = data.nickname

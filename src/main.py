@@ -6,24 +6,29 @@ from auto_exec import AutoExec
 from services.data_service import DataService
 from main_window import MainWindow
 from PyQt5.QtWidgets import QApplication
-
+from services.dialog_service import DialogService
 from services.setup_service import SetupService
+
+
+AUTO_EXEC_ARGUMENT = '-autoexec'
 
 
 def main(argv: list[str]) -> None:
     """
     App main method.
     """
+    app = QApplication(argv)
     if not SetupService.is_game_installed():
-        print('Installing the game...')
-        SetupService.unzip_game_zip_folder()
-        print('Installation done!')
+        DialogService.progress(
+            None,
+            'Installing Game... (Codename Eagle Multiplayer Demo)',
+            SetupService.unzip_game_zip_folder
+        )
     DataService.load_data()
-    if '--autoexec' in argv:
+    main_window = MainWindow()
+    if AUTO_EXEC_ARGUMENT in argv:
         AutoExec.execute()
         sys.exit(0)
-    app = QApplication(argv)
-    main_window = MainWindow()
     main_window.show()
     sys.exit(app.exec_())
 

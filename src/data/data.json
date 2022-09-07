@@ -1,5 +1,5 @@
 {
-    "nickname": "CEPlayer",
+    "nickname": "CEClient",
     "fov": 200,
     "mousesens": 9,
     "viewdist": 3000,
@@ -8,6 +8,10 @@
         {
             "server_name": "codenameeaglemultiplayer.com",
             "server_ip": "89.38.98.12:24711"
+        },
+        {
+            "server_name": "US Server",
+            "server_ip": "67.199.173.146:24711"
         }
     ],
     "last_server_ip": "89.38.98.12:24711",

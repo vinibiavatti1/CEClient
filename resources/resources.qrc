@@ -9,5 +9,7 @@
 		<file alias="world-add">icons/world_add.png</file>
 		<file alias="world-delete">icons/world_delete.png</file>
         <file alias="info">icons/information.png</file>
+		<file alias="ping">icons/world_link.png</file>
+		<file alias="exit">icons/cancel.png</file>
     </qresource>
 </RCC>

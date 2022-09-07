@@ -6,7 +6,9 @@ from enums.frame_enum import FrameEnum
 from frames.about_frame import AboutFrame
 from frames.config_frame import ConfigFrame
 from frames.connection_frame import ConnectionFrame
+from frames.ping_test_frame import PingTestFrame
 from frames.server_list_frame import ServerListFrame
+from services.dialog_service import DialogService
 from typing import Any
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (
@@ -55,6 +57,8 @@ class MainWindow(QMainWindow):
             self.setCentralWidget(ServerListFrame(self))
         elif frame == FrameEnum.ABOUT_FRAME:
             self.setCentralWidget(AboutFrame(self))
+        elif frame == FrameEnum.PING_TEST_FRAME:
+            self.setCentralWidget(PingTestFrame(self))
 
     ###########################################################################
     # Registrations
@@ -70,8 +74,12 @@ class MainWindow(QMainWindow):
             QAction(QIcon(':config-icon'), 'Game Configuration', self)
         self.__server_list_config_action = \
             QAction(QIcon(':config-icon'), 'Server List Configuration', self)
+        self.__ping_test_action = \
+            QAction(QIcon(':ping'), 'Server Ping Test', self)
         self.__about_action = \
             QAction(QIcon(':info'), 'About', self)
+        self.__exit_action = \
+            QAction(QIcon(':exit'), 'Exit', self)
 
     def __register_handlers(self) -> None:
         """
@@ -89,6 +97,12 @@ class MainWindow(QMainWindow):
         self.__about_action.triggered.connect(
             lambda: self.set_central_widget(FrameEnum.ABOUT_FRAME)
         )
+        self.__ping_test_action.triggered.connect(
+            lambda: self.set_central_widget(FrameEnum.PING_TEST_FRAME)
+        )
+        self.__exit_action.triggered.connect(
+            self.exit_action_handler
+        )
 
     ###########################################################################
     # Private Methods
@@ -101,9 +115,13 @@ class MainWindow(QMainWindow):
         self.__menu_bar = QMenuBar(self)
         self.__menu = QMenu('Menu', self)
         self.__menu.addAction(self.__connection_action)
+        self.__menu.addSeparator()
         self.__menu.addAction(self.__config_action)
         self.__menu.addAction(self.__server_list_config_action)
+        self.__menu.addAction(self.__ping_test_action)
+        self.__menu.addSeparator()
         self.__menu.addAction(self.__about_action)
+        self.__menu.addAction(self.__exit_action)
         self.__menu_bar.addMenu(self.__menu)
         self.setMenuBar(self.__menu_bar)
 
@@ -115,3 +133,15 @@ class MainWindow(QMainWindow):
         self.__status_bar_content = QLabel(f'Created by: {AppInfo.APP_AUTHOR}')
         self.__status_bar.addPermanentWidget(self.__status_bar_content, 100)
         self.setStatusBar(self.__status_bar)
+
+    ###########################################################################
+    # Handlers
+    ###########################################################################
+
+    def exit_action_handler(self) -> None:
+        """
+        Exit the application.
+        """
+        ok = DialogService.question(self, 'Do you really want to quit?')
+        if ok:
+            self.close()

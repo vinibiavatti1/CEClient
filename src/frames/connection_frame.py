@@ -2,7 +2,7 @@
 Connection frame module.
 """
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QPixmap
 from services.data_service import DataService
 from typing import TYPE_CHECKING
 from PyQt5.QtWidgets import (
@@ -49,6 +49,16 @@ class ConnectionFrame(QFrame):
         self.__grid.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.setLayout(self.__grid)
 
+        # CE Image
+        image = QLabel(self)
+        pixmap = QPixmap(':ce-icon')
+        pixmap = pixmap.scaled(100, 100)
+        image.setPixmap(pixmap)
+        image.setFixedSize(100, 100)
+        image.setAlignment(Qt.AlignCenter)
+        self.__grid.addWidget(image)
+        self.__grid.setAlignment(image, Qt.AlignmentFlag.AlignHCenter)
+
         # Nickname field
         self.__grid.addWidget(QLabel('Nickname (max 10):'))
         self.__nickname_field = QLineEdit(self)
@@ -70,6 +80,8 @@ class ConnectionFrame(QFrame):
         # Run button
         self.__run_button = QPushButton('Connect!', self)
         self.__run_button.setIcon(QIcon(':run-icon'))
+        if len(data.server_list) == 0:
+            self.__run_button.setDisabled(True)
         self.__grid.addWidget(self.__run_button)
 
     ###########################################################################

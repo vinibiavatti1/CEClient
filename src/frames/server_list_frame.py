@@ -20,6 +20,7 @@ from services.data_service import DataService
 from services.dialog_service import DialogService
 
 from services.game_config_service import GameConfigService
+from services.process_service import ProcessService
 if TYPE_CHECKING:
     from main_window import MainWindow
 
@@ -66,6 +67,14 @@ class ServerListFrame(QFrame):
         if len(server_ip) == 0:
             DialogService.error(self, 'Invalid server address.')
             return
+        if ':' not in server_ip:
+            yes = DialogService.question(
+                self,
+                'The server address does not contain the CE port (24711). ' +
+                'Do you want to insert the port?'
+            )
+            if yes:
+                server_ip += f':{ProcessService.CE_PORT}'
         data = DataService.get_data()
         data.server_list.append(
             dict(server_name=server_name, server_ip=server_ip)
