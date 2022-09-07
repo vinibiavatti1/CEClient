@@ -43,7 +43,7 @@ To execute the CEClient automatically, execute the file `autoexec.bat` located i
 
 ## Spoilers
 
-<img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/2.png" width="400" alt="CEClient image 2"/>
+<img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/5.png" width="400" alt="CEClient image 2"/>
 
 <img src="https://raw.githubusercontent.com/vinibiavatti1/CEClient/main/images/3.png" width="400" alt="CEClient image 3"/>
 
