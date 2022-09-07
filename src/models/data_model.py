@@ -15,7 +15,7 @@ class DataModel:
         Create a new DataModel.
         """
         self.nickname = 'CEPlayer'
-        self.fov = 235
+        self.fov = 200
         self.mousesens = 9
         self.viewdist = 3000
         self.latency = 0
@@ -23,9 +23,13 @@ class DataModel:
             {
                 'server_name': 'codenameeaglemultiplayer.com',
                 'server_ip': '89.38.98.12:24711'
+            },
+            {
+                'server_name': 'US Server',
+                'server_ip': '67.199.173.146:24711'
             }
         ]
-        self.last_server_ip: Optional[str] = None
+        self.last_server_ip: Optional[str] = '89.38.98.12:24711'
         self.last_server_index: int = 0
 
     @classmethod
