@@ -3,6 +3,7 @@ Connection frame module.
 """
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QPixmap
+from filters.nickname_event_filter import NicknameFilter
 from services.data_service import DataService
 from typing import TYPE_CHECKING
 from PyQt5.QtWidgets import (
@@ -13,6 +14,7 @@ from PyQt5.QtWidgets import (
     QPushButton,
     QComboBox,
 )
+from services.dialog_service import DialogService
 from services.game_config_service import GameConfigService
 
 from services.process_service import ProcessService
@@ -65,6 +67,8 @@ class ConnectionFrame(QFrame):
         self.__nickname_field.setMaxLength(10)
         self.__nickname_field.setPlaceholderText('Enter the player name')
         self.__nickname_field.setText(data.nickname)
+        self.__nickname_event_filter = NicknameFilter()
+        self.__nickname_field.installEventFilter(self.__nickname_event_filter)
         self.__grid.addWidget(self.__nickname_field)
 
         # Server List
@@ -124,4 +128,10 @@ class ConnectionFrame(QFrame):
         data.last_server_index = self.__server_list.currentIndex()
         data.nickname = nickname
         DataService.save_data(data)
-        ProcessService.execute(server_ip, nickname)
+        command_line, status = ProcessService.execute(server_ip, nickname)
+        if status != 0:
+            DialogService.error(
+                None,
+                f'An error ocurred to start the game. Command line: '
+                f'{command_line}'
+            )

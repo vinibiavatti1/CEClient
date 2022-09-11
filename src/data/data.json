@@ -1,5 +1,5 @@
 {
-    "nickname": "CEClient",
+    "nickname": "Vini",
     "fov": 200,
     "mousesens": 9,
     "viewdist": 3000,
@@ -15,5 +15,7 @@
         }
     ],
     "last_server_ip": "89.38.98.12:24711",
-    "last_server_index": 0
+    "last_server_index": 0,
+    "ce_execution_command": "ce.exe",
+    "additional_arguments": ""
 }

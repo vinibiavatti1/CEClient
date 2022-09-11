@@ -3,6 +3,8 @@ Process service to work with ce.exe process and lobby.exe.
 """
 import psutil
 import os
+from services.data_service import DataService
+from services.dialog_service import DialogService
 
 from services.path_service import PathService
 
@@ -29,13 +31,18 @@ class ProcessService:
         print('Process ce.exe and lobby.exe killed!')
 
     @classmethod
-    def execute(cls, server_ip: str, nickname: str) -> None:
+    def execute(cls, server_ip: str, nickname: str) -> tuple[str, int]:
         """
         Execute game connection to the server.
         """
-        ce_command = f'ce.exe +connect {server_ip} +name "{nickname}"'
+        data = DataService.get_data()
+        exec_command = data.ce_execution_command
+        additional_args = data.additional_arguments
+        ce_command = f'{exec_command} +connect {server_ip} +name "{nickname}"' + \
+                     f' {additional_args}'
         command_line = f'cd "{PathService.get_game_path()}" && {ce_command}'
         cls.kill_ce_processes()
         print(f'Executing command: {command_line}')
-        os.system(command_line)
+        status = os.system(command_line)
         cls.kill_ce_processes()
+        return command_line, status

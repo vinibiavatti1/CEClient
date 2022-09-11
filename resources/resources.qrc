@@ -11,5 +11,10 @@
         <file alias="info">icons/information.png</file>
 		<file alias="ping">icons/world_link.png</file>
 		<file alias="exit">icons/cancel.png</file>
+		<file alias="list-server">icons/server_edit.png</file>
+		<file alias="map-edit">icons/map_edit.png</file>
+		<file alias="map-add">icons/map_add.png</file>
+		<file alias="map-delete">icons/map_delete.png</file>
+		<file alias="joystick">icons/joystick.png</file>
     </qresource>
 </RCC>
