@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
     QLabel,
     QLineEdit,
     QVBoxLayout,
+    QTextEdit,
 )
 if TYPE_CHECKING:
     from main_window import MainWindow
@@ -27,42 +28,24 @@ class AboutFrame(QFrame):
         """
         Build AboutFrame.
         """
-        self._container = QVBoxLayout()
-        self._container.setAlignment(Qt.AlignmentFlag.AlignTop)
-        self.setLayout(self._container)
+        self.__container = QVBoxLayout()
+        self.__container.setAlignment(Qt.AlignmentFlag.AlignTop)
+        self.setLayout(self.__container)
 
         # App info
-        self._container.addWidget(QLabel('Application:', self))
-        app_field = QLineEdit()
-        app_field.setReadOnly(True)
-        app_field.setText(AppInfo.APP_TITLE + ' ' + AppInfo.APP_VERSION)
-        self._container.addWidget(app_field)
-
-        # Author info
-        self._container.addWidget(QLabel('Author:', self))
-        app_field = QLineEdit()
-        app_field.setReadOnly(True)
-        app_field.setText(AppInfo.APP_AUTHOR)
-        self._container.addWidget(app_field)
-
-        # Website info
-        self._container.addWidget(QLabel('CE Multiplayer Website:', self))
-        app_field = QLineEdit()
-        app_field.setReadOnly(True)
-        app_field.setText('https://codenameeaglemultiplayer.com/')
-        self._container.addWidget(app_field)
-
-        # Discord info
-        self._container.addWidget(QLabel('Discord Community:', self))
-        app_field = QLineEdit()
-        app_field.setReadOnly(True)
-        app_field.setText('https://discord.gg/gGaMUJA9st')
-        self._container.addWidget(app_field)
-
-        # Reddit info
-        self._container.addWidget(QLabel('Reddit Community:', self))
-        app_field = QLineEdit()
-        app_field.setReadOnly(True)
-        app_field.setText('https://www.reddit.com/r/CodenameEagle/')
-        self._container.addWidget(app_field)
-
+        self.__container.addWidget(QLabel(f'About {AppInfo.APP_TITLE}:', self))
+        self.__text_area = QTextEdit(self)
+        self.__text_area.setReadOnly(True)
+        self.__text_area.setText(
+            f'Application: {AppInfo.APP_TITLE} {AppInfo.APP_VERSION}\n' +
+            f'Author: {AppInfo.APP_AUTHOR}\n' +
+            f'Game Version: {AppInfo.GAME_NAME}\n' +
+            f'CE Website: https://codenameeaglemultiplayer.com/\n' +
+            f'NVL Map: https://github.com/vinibiavatti1/CodenameEagleNVLMap' +
+            f'Reddit Community: https://www.reddit.com/r/CodenameEagle/\n' +
+            f'Discord Community: https://discord.gg/gGaMUJA9st\n' +
+            f'\n' +
+            f'Please, join the Discord Community. We are waiting for you to ' +
+            f'bring the CE essence again! We hope a GG for you.'
+        )
+        self.__container.addWidget(self.__text_area)

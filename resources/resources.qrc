@@ -16,5 +16,8 @@
 		<file alias="map-add">icons/map_add.png</file>
 		<file alias="map-delete">icons/map_delete.png</file>
 		<file alias="joystick">icons/joystick.png</file>
+		<file alias="open-folder">icons/folder_explore.png</file>
+		<file alias="open-dg">icons/monitor.png</file>
+		<file alias="reinstall">icons/error.png</file>
     </qresource>
 </RCC>

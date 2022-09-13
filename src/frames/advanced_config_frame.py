@@ -14,11 +14,14 @@ from PyQt5.QtWidgets import (
     QLineEdit,
     QComboBox,
 )
+from app_info import AppInfo
 from enums.frame_enum import FrameEnum
 from frames.connection_frame import ConnectionFrame
 from services.data_service import DataService
+from services.dialog_service import DialogService
 
 from services.game_config_service import GameConfigService
+from services.setup_service import SetupService
 if TYPE_CHECKING:
     from main_window import MainWindow
 
@@ -48,6 +51,9 @@ class AdvancedConfigFrame(QFrame):
         self.__save_button.clicked.connect(
             self.__handle_save
         )
+        self.__reinstall_button.clicked.connect(
+            self.__handle_reinstall
+        )
 
     def __handle_save(self) -> None:
         """
@@ -59,6 +65,27 @@ class AdvancedConfigFrame(QFrame):
         DataService.save_data(data)
         self.__main_window.set_central_widget(
             FrameEnum.CONNECTION_FRAME
+        )
+
+    def __handle_reinstall(self) -> None:
+        """
+        Handle reinstall game event.
+        """
+        ok = DialogService.question(
+            self,
+            'The game will be reinstalled. All in-game configurations and ' +
+            'save points will be lost. Proceed?'
+        )
+        if not ok:
+            return
+        DialogService.progress(
+            self,
+            f'Reinstalling game... ({AppInfo.GAME_NAME})',
+            SetupService.reinstall_game
+        )
+        DialogService.info(
+            self,
+            'Game reinstalled successfully!'
         )
 
     ###########################################################################
@@ -108,3 +135,8 @@ class AdvancedConfigFrame(QFrame):
         self.__save_button = QPushButton('Save', self)
         self.__save_button.setIcon(QIcon(':save-icon'))
         self.__grid.addWidget(self.__save_button)
+
+        # Reinstall game button
+        self.__reinstall_button = QPushButton('Reinstall game', self)
+        self.__reinstall_button.setIcon(QIcon(':reinstall'))
+        self.__grid.addWidget(self.__reinstall_button)

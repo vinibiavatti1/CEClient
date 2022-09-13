@@ -2,6 +2,7 @@
 App entry-point module.
 """
 import sys
+from app_info import AppInfo
 from auto_exec import AutoExec
 from services.data_service import DataService
 from main_window import MainWindow
@@ -21,8 +22,8 @@ def main(argv: list[str]) -> None:
     if not SetupService.is_game_installed():
         DialogService.progress(
             None,
-            'Installing Game... (Codename Eagle Multiplayer Demo)',
-            SetupService.unzip_game_zip_folder
+            f'Installing Game... ({AppInfo.GAME_NAME})',
+            SetupService.install_game
         )
     DataService.load_data()
     main_window = MainWindow()

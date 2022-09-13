@@ -1,6 +1,7 @@
 """
 Main window module.
 """
+import os
 from app_info import AppInfo
 from enums.frame_enum import FrameEnum
 from frames.about_frame import AboutFrame
@@ -12,6 +13,7 @@ from frames.ping_test_frame import PingTestFrame
 from frames.server_list_frame import ServerListFrame
 from services.dialog_service import DialogService
 from services.map_service import MapService
+from services.path_service import PathService
 from typing import Any
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (
@@ -94,6 +96,10 @@ class MainWindow(QMainWindow):
                 QIcon(':map-edit'),
                 f'Maps ({MapService.MAP_RECORDS_FILE})', self
             )
+        self.__open_folder_action = \
+            QAction(QIcon(':open-folder'), 'Open Game Folder...', self)
+        self.__open_dg_action = \
+            QAction(QIcon(':open-dg'), 'Open DgVoodoo...', self)
 
     def __register_handlers(self) -> None:
         """
@@ -123,6 +129,13 @@ class MainWindow(QMainWindow):
         self.__maps_action.triggered.connect(
             lambda: self.set_central_widget(FrameEnum.MAP_FRAME)
         )
+        self.__open_folder_action.triggered.connect(
+            lambda: self.handle_open_folder()
+        )
+        self.__open_dg_action.triggered.connect(
+            lambda: self.handle_open_dg()
+        )
+
 
     ###########################################################################
     # Private Methods
@@ -144,6 +157,10 @@ class MainWindow(QMainWindow):
         self.__menu.addSeparator()
         self.__menu.addAction(self.__exit_action)
         self.__menu_bar.addMenu(self.__menu)
+        self.__open_menu = QMenu('Open', self)
+        self.__open_menu.addAction(self.__open_folder_action)
+        self.__open_menu.addAction(self.__open_dg_action)
+        self.__menu_bar.addMenu(self.__open_menu)
         self.setMenuBar(self.__menu_bar)
 
     def __build_status_bar(self) -> None:
@@ -168,3 +185,17 @@ class MainWindow(QMainWindow):
         ok = DialogService.question(self, 'Do you really want to quit?')
         if ok:
             self.close()
+
+    def handle_open_folder(self) -> None:
+        """
+        Open game folder.
+        """
+        os.startfile(PathService.get_game_path())
+
+    def handle_open_dg(self) -> None:
+        """
+        Open DgVoodoo.
+        """
+        os.startfile(
+            os.path.join(PathService.get_game_path(), 'dgVoodooCpl.exe')
+        )

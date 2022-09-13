@@ -1,6 +1,7 @@
 """
 Setup utilities module.
 """
+import shutil
 import zipfile
 import os
 from services.path_service import PathService
@@ -15,7 +16,7 @@ class SetupService:
     CE_EXEC_FILE_NAME: str = 'ce.exe'
 
     @classmethod
-    def unzip_game_zip_folder(cls) -> None:
+    def install_game(cls) -> None:
         """
         Unzip the game zip folder.
         """
@@ -33,3 +34,13 @@ class SetupService:
         return os.path.exists(os.path.join(
             PathService.get_game_path(), cls.CE_EXEC_FILE_NAME
         ))
+
+    @classmethod
+    def reinstall_game(cls) -> None:
+        """
+        Delete the game folder.
+        """
+        path = PathService.get_game_path()
+        if os.path.exists(path):
+            shutil.rmtree(path)
+        cls.install_game()
