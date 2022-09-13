@@ -137,6 +137,6 @@ class AdvancedConfigFrame(QFrame):
         self.__grid.addWidget(self.__save_button)
 
         # Reinstall game button
-        self.__reinstall_button = QPushButton('Reinstall game', self)
+        self.__reinstall_button = QPushButton('Reinstall Game', self)
         self.__reinstall_button.setIcon(QIcon(':reinstall'))
         self.__grid.addWidget(self.__reinstall_button)
