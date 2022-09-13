@@ -1,4 +1,7 @@
-from typing import TYPE_CHECKING, Any
+"""
+About frame module.
+"""
+from typing import TYPE_CHECKING
 from PyQt5.QtCore import Qt
 from app_info import AppInfo
 from PyQt5.QtWidgets import (
