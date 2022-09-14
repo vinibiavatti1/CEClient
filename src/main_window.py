@@ -8,6 +8,7 @@ from frames.about_frame import AboutFrame
 from frames.advanced_config_frame import AdvancedConfigFrame
 from frames.config_frame import ConfigFrame
 from frames.connection_frame import ConnectionFrame
+from frames.keys_frame import KeysFrame
 from frames.map_frame import MapFrame
 from frames.ping_test_frame import PingTestFrame
 from frames.server_list_frame import ServerListFrame
@@ -38,7 +39,7 @@ class MainWindow(QMainWindow):
         """
         super().__init__(parent)
         self.setWindowIcon(QIcon(':ce-icon'))
-        self.resize(460, 360)
+        self.resize(520, 440)
         self.setWindowTitle(f'{AppInfo.APP_TITLE} {AppInfo.APP_VERSION}')
         self.__register_actions()
         self.__build_menu()
@@ -68,6 +69,8 @@ class MainWindow(QMainWindow):
             self.setCentralWidget(AdvancedConfigFrame(self))
         elif frame == FrameEnum.MAP_FRAME:
             self.setCentralWidget(MapFrame(self))
+        elif frame == FrameEnum.KEYS_FRAME:
+            self.setCentralWidget(KeysFrame(self))
 
     ###########################################################################
     # Registrations
@@ -100,6 +103,8 @@ class MainWindow(QMainWindow):
             QAction(QIcon(':open-folder'), 'Open Game Folder...', self)
         self.__open_dg_action = \
             QAction(QIcon(':open-dg'), 'Open DgVoodoo...', self)
+        self.__keys_action = \
+            QAction(QIcon(':keyboard'), 'Game Controls', self)
 
     def __register_handlers(self) -> None:
         """
@@ -135,7 +140,9 @@ class MainWindow(QMainWindow):
         self.__open_dg_action.triggered.connect(
             lambda: self.handle_open_dg()
         )
-
+        self.__keys_action.triggered.connect(
+            lambda: self.set_central_widget(FrameEnum.KEYS_FRAME)
+        )
 
     ###########################################################################
     # Private Methods
@@ -149,6 +156,7 @@ class MainWindow(QMainWindow):
         self.__menu = QMenu('Menu', self)
         self.__menu.addAction(self.__connection_action)
         self.__menu.addAction(self.__config_action)
+        self.__menu.addAction(self.__keys_action)
         self.__menu.addAction(self.__server_list_config_action)
         self.__menu.addAction(self.__ping_test_action)
         self.__menu.addAction(self.__maps_action)

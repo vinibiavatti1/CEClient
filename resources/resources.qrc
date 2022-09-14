@@ -19,5 +19,7 @@
 		<file alias="open-folder">icons/folder_explore.png</file>
 		<file alias="open-dg">icons/monitor.png</file>
 		<file alias="reinstall">icons/error.png</file>
+		<file alias="reset">icons/arrow_rotate_clockwise.png</file>
+		<file alias="keyboard">icons/keyboard.png</file>
     </qresource>
 </RCC>

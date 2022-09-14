@@ -16,3 +16,4 @@ class FrameEnum(Enum):
     PING_TEST_FRAME = 5
     ADVANCED_CONFIG_FRAME = 6
     MAP_FRAME = 7
+    KEYS_FRAME = 8

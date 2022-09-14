@@ -56,3 +56,10 @@ class PathService:
             return os.path.dirname(sys.argv[0])
         else:
             raise Exception('Cannot get root directory')
+
+    @classmethod
+    def get_key_conf_path(cls) -> str:
+        """
+        Return keyconf.dat path.
+        """
+        return os.path.join(cls.get_game_path(), 'keyconf.dat')

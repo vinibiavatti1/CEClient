@@ -73,8 +73,8 @@ class AdvancedConfigFrame(QFrame):
         """
         ok = DialogService.question(
             self,
-            'The game will be reinstalled. All in-game configurations and ' +
-            'save points will be lost. Proceed?'
+            'The game will be reinstalled. All in-game configurations, ' +
+            'save points and map folders will be deleted. Proceed?'
         )
         if not ok:
             return
@@ -137,6 +137,9 @@ class AdvancedConfigFrame(QFrame):
         self.__grid.addWidget(self.__save_button)
 
         # Reinstall game button
+        self.__grid.addWidget(QLabel(
+            f'If you want to reinstall the game, click on the button below.'
+        ))
         self.__reinstall_button = QPushButton('Reinstall Game', self)
         self.__reinstall_button.setIcon(QIcon(':reinstall'))
         self.__grid.addWidget(self.__reinstall_button)
