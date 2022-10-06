@@ -1,7 +1,6 @@
 """
 Game configuration module to work with default.cfg file.
 """
-from services.data_service import DataService
 from services.path_service import PathService
 
 

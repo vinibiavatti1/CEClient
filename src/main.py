@@ -11,7 +11,7 @@ from services.dialog_service import DialogService
 from services.setup_service import SetupService
 
 
-AUTO_EXEC_ARGUMENT = '-autoexec'
+AUTO_EXEC_ARGUMENT = '--autoexec'
 
 
 def main(argv: list[str]) -> None:
