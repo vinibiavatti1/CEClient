@@ -16,7 +16,7 @@ The CEClient is a tool that permits to the player manage server connections and 
 
 To start using the CEClient, just follow the steps below (It is easy and simple).
 
-1. Download the last release of tool: [CEClient v1.1.0](https://github.com/vinibiavatti1/CEClient/releases/download/v1.1.0/ceclient.zip);
+1. Download the last release of tool: [CEClient](https://github.com/vinibiavatti1/CEClient/releases/latest);
 2. Extract the content of the zip file (ceclient.zip);
 3. Execute ceclient.exe;
 
