@@ -21,7 +21,7 @@ class DataModel:
         self.latency = 0
         self.server_list: list[dict[str, str]] = [
             {
-                'server_name': 'codenameeaglemultiplayer.com',
+                'server_name': 'EU Server',
                 'server_ip': '89.38.98.12:24711'
             },
             {
