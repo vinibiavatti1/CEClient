@@ -16,7 +16,7 @@ if os.path.exists(BUILD_DIR):
 # Create EXE
 os.system(
     f'pyinstaller --noconsole --paths {DEPENDENCIES_PATH} --name ceclient ' +
-    f'--onefile src/main.py'
+    f'--onefile src/main.py --icon=resources/icons/ce_icon.ico'
 )
 
 # Create dirs
