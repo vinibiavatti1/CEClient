@@ -7,7 +7,7 @@ from services.data_service import DataService
 from services.process_service import ProcessService
 
 
-class AutoExec:
+class AutoConnect:
     """
     Auto execute connection class.
     """

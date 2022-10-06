@@ -29,8 +29,8 @@ shutil.copyfile(
     os.path.join(BUILD_DIR, 'data', 'game.zip'),
 )
 shutil.copyfile(
-    os.path.join(CURRENT_DIR, 'src', 'autoexec.bat'),
-    os.path.join(BUILD_DIR, 'autoexec.bat'),
+    os.path.join(CURRENT_DIR, 'src', 'auto_connect.bat'),
+    os.path.join(BUILD_DIR, 'auto_connect.bat'),
 )
 shutil.copytree(
     os.path.join(CURRENT_DIR, 'resources', 'icons'),
