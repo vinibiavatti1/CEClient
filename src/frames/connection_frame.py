@@ -78,8 +78,9 @@ class ConnectionFrame(QFrame):
             self.__server_list.addItem(
                 server['server_name'], server['server_ip']
             )
+            if data.last_server_name == server['server_name']:
+                self.__server_list.setCurrentText(data.last_server_name)
         self.__grid.addWidget(self.__server_list)
-        self.__server_list.setCurrentIndex(data.last_server_index)
 
         # Run button
         self.__run_button = QPushButton('Connect!', self)
@@ -125,7 +126,7 @@ class ConnectionFrame(QFrame):
         )
         data = DataService.get_data()
         data.last_server_ip = server_ip
-        data.last_server_index = self.__server_list.currentIndex()
+        data.last_server_name = self.__server_list.currentText()
         data.nickname = nickname
         DataService.save_data(data)
         command_line, status = ProcessService.execute(server_ip, nickname)

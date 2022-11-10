@@ -2,7 +2,7 @@
 Main window module.
 """
 import os
-from app_info import AppInfo
+from app_constants import AppConstants
 from enums.frame_enum import FrameEnum
 from frames.about_frame import AboutFrame
 from frames.advanced_config_frame import AdvancedConfigFrame
@@ -40,7 +40,9 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
         self.setWindowIcon(QIcon(':ce-icon'))
         self.resize(520, 440)
-        self.setWindowTitle(f'{AppInfo.APP_TITLE} {AppInfo.APP_VERSION}')
+        self.setWindowTitle(
+            f'{AppConstants.APP_TITLE} {AppConstants.APP_VERSION}'
+        )
         self.__register_actions()
         self.__build_menu()
         self.__build_status_bar()
@@ -177,7 +179,9 @@ class MainWindow(QMainWindow):
         """
         self.__status_bar = QStatusBar(self)
         self.__status_bar_content = QLabel(
-            f'Created by: {AppInfo.APP_AUTHOR} / codenameeaglemultiplayer.com'
+            f'Created by: {AppConstants.APP_AUTHOR}' +
+            f' - ' +
+            f'{AppConstants.WEBSITE_LINK}'
         )
         self.__status_bar.addPermanentWidget(self.__status_bar_content, 100)
         self.setStatusBar(self.__status_bar)
@@ -205,5 +209,8 @@ class MainWindow(QMainWindow):
         Open DgVoodoo.
         """
         os.startfile(
-            os.path.join(PathService.get_game_path(), 'dgVoodooCpl.exe')
+            os.path.join(
+                PathService.get_game_path(),
+                AppConstants.DG_VOODOO_EXE
+            )
         )

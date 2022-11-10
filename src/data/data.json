@@ -1,5 +1,5 @@
 {
-    "nickname": "CEPlayer",
+    "nickname": "TEST",
     "fov": 200,
     "mousesens": 9,
     "viewdist": 3000,
@@ -15,7 +15,8 @@
         }
     ],
     "last_server_ip": "89.38.98.12:24711",
-    "last_server_index": 0,
+    "last_server_name": "EU Server",
     "ce_execution_command": "ce.exe",
-    "additional_arguments": ""
+    "additional_arguments": "",
+    "version": 1
 }

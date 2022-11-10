@@ -9,12 +9,10 @@ from PyQt5.QtWidgets import (
     QLabel,
     QVBoxLayout,
     QPushButton,
-    QSpinBox,
-    QCheckBox,
     QLineEdit,
     QComboBox,
 )
-from app_info import AppInfo
+from app_constants import AppConstants
 from enums.frame_enum import FrameEnum
 from frames.connection_frame import ConnectionFrame
 from services.data_service import DataService
@@ -80,7 +78,7 @@ class AdvancedConfigFrame(QFrame):
             return
         DialogService.progress(
             self,
-            f'Reinstalling game... ({AppInfo.GAME_NAME})',
+            f'Reinstalling game... ({AppConstants.GAME_NAME})',
             SetupService.reinstall_game
         )
         DialogService.info(

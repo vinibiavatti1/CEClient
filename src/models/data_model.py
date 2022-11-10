@@ -30,9 +30,10 @@ class DataModel:
             }
         ]
         self.last_server_ip: Optional[str] = '89.38.98.12:24711'
-        self.last_server_index: int = 0
+        self.last_server_name: str = 'EU Server'
         self.ce_execution_command: str = 'ce.exe'
         self.additional_arguments: str = ''
+        self.version: int = 1
 
     @classmethod
     def from_json(cls, json_object: dict[str, Any]) -> 'DataModel':
@@ -42,7 +43,7 @@ class DataModel:
         data_model = cls()
         data_model.nickname = json_object['nickname']
         data_model.server_list = json_object['server_list']
-        data_model.last_server_index = json_object['last_server_index']
+        data_model.last_server_name = json_object['last_server_name']
         data_model.last_server_ip = json_object['last_server_ip']
         data_model.fov = json_object['fov']
         data_model.mousesens = json_object['mousesens']
@@ -50,6 +51,7 @@ class DataModel:
         data_model.latency = json_object['latency']
         data_model.ce_execution_command = json_object['ce_execution_command']
         data_model.additional_arguments = json_object['additional_arguments']
+        data_model.version = json_object['version']
         return data_model
 
     ###########################################################################

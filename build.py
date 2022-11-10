@@ -32,6 +32,14 @@ shutil.copyfile(
     os.path.join(CURRENT_DIR, 'src', 'auto_connect.bat'),
     os.path.join(BUILD_DIR, 'auto_connect.bat'),
 )
+shutil.copyfile(
+    os.path.join(CURRENT_DIR, 'src', 'auto_connect.ps1'),
+    os.path.join(BUILD_DIR, 'auto_connect.ps1'),
+)
+shutil.copyfile(
+    os.path.join(CURRENT_DIR, 'src', 'README.url'),
+    os.path.join(BUILD_DIR, 'README.url'),
+)
 shutil.copytree(
     os.path.join(CURRENT_DIR, 'resources', 'icons'),
     os.path.join(BUILD_DIR, 'resources', 'icons'),

@@ -50,8 +50,9 @@ class PingTestFrame(QFrame):
             self.__server_list.addItem(
                 server['server_name'], server['server_ip']
             )
+            if data.last_server_name == server['server_name']:
+                self.__server_list.setCurrentText(data.last_server_name)
         self.__grid.addWidget(self.__server_list)
-        self.__server_list.setCurrentIndex(data.last_server_index)
 
         # Button
         self.__test_button = QPushButton('Test Ping', self)
@@ -106,10 +107,19 @@ class PingTestFrame(QFrame):
         Execute ping test.
         """
         try:
-            self.__ping_test_result = subprocess.check_output(
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            process = subprocess.Popen(
                 command,
-                stderr=subprocess.STDOUT,
-                universal_newlines=True
+                shell=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                stdin=subprocess.PIPE
             )
+            out, err = process.communicate()
+            if out:
+                self.__ping_test_result = out.decode()
+            else:
+                self.__ping_test_result = err.decode()
         except subprocess.CalledProcessError:
             self.__ping_test_result = 'Ping test failed'

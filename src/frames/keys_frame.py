@@ -4,7 +4,7 @@ Keys frame module.
 from typing import TYPE_CHECKING
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
-from app_info import AppInfo
+from app_constants import AppConstants
 from enums.key_enum import KeyEnum
 from services.dialog_service import DialogService
 from services.key_service import KeyService
