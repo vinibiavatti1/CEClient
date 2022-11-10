@@ -30,7 +30,7 @@ To configure some client stuff (mouse sensitivity, view distance, etc.), open th
 
 To add or delete a server from CEClient tool, go to `Menu > Server List Configuration`. There, you can add new server connections entering the data on the `Server Name` and `Server Address` fields. You also can delete some server from de list using the `Delete Server` option.
 
-## Auto Execution
+## Auto Connect
 
 To execute the CEClient automatically, execute the file `auto_connect.ps1` or `auto_connect.bat` located in the same directory of the `ceclient.exe` file. You can create a shortcut to this file to customize the icon and the name of the file, and make easier the way to connect automatically to the server.
 
