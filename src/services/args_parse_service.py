@@ -28,18 +28,18 @@ class ArgsParserService:
         """
         self.parser = argparse.ArgumentParser(prog=AppConstants.APP_TITLE)
         self.parser.add_argument(
-            '-ac',
+            '-a',
             '--auto-connect',
             action='store_true',
             help='Auto connect to server'
         )
         self.parser.add_argument(
-            '-ip',
+            '-i',
             '--ip',
             help='Specify IP address to auto connect'
         )
         self.parser.add_argument(
-            '-sn',
+            '-s',
             '--server-name',
             help='Specify server name from server list to auto connect'
         )
