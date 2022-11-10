@@ -39,9 +39,9 @@ You can also use some arguments in the execution command to specify the server t
 |Argument|Description|
 |---|---|
 |`-h` or `--help`|Show help description|
-|`-ac` or `--auto-connect`|Auto connect to server|
-|`-ip` or `--ip`|Specify IP address to auto connect|
-|`-sn` or `--server-name`|Specify server name from server list to auto connect|
+|`-a` or `--auto-connect`|Auto connect to server|
+|`-i` or `--ip`|Specify IP address to auto connect|
+|`-s` or `--server-name`|Specify server name from server list to auto connect|
 
 ## Take a Look!
 
