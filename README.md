@@ -10,11 +10,11 @@
   Codename Eagle Client Tool
 </p>
 
-The CEClient is a tool that permits to the player manage server connections and client configurations, to connect in a game server. If you want to host a server, or manipulate versions of the game, please, take a look on [CEHub](https://github.com/vinibiavatti1/CEHub).
+The CEClient is a tool that allows to the player to manage server connections and client settings to connect to a game server. If you want to host a server, or handle CE game versions, please, take a look at [CEHub](https://github.com/vinibiavatti1/CEHub).
 
 ## Getting Started
 
-To start using the CEClient, just follow the steps below (It is easy and simple).
+To start using CEClient, just follow the steps below (It is easy and simple).
 
 1. [Download](https://github.com/vinibiavatti1/CEClient/releases/latest) the last release of CEClient;
 2. Extract the content of the zip file (ceclient.zip);
@@ -32,7 +32,16 @@ To add or delete a server from CEClient tool, go to `Menu > Server List Configur
 
 ## Auto Execution
 
-To execute the CEClient automatically, execute the file `autoexec.bat` located in the same directory of the `ceclient.exe` file. You can create a shortcut to this file to customize the icon and the name of the file, and make easier the way to connect automatically to the server.
+To execute the CEClient automatically, execute the file `auto_connect.ps1` or `auto_connect.bat` located in the same directory of the `ceclient.exe` file. You can create a shortcut to this file to customize the icon and the name of the file, and make easier the way to connect automatically to the server.
+
+You can also use some arguments in the execution command to specify the server to connect, and create multiple shortcuts. Check the table below with the available arguments:
+
+|Argument|Description|
+|---|---|
+|`-h` or `--help`|Show help description|
+|`-ac` or `--auto-connect`|Auto connect to server|
+|`-ip` or `--ip`|Specify IP address to auto connect|
+|`-sn` or `--server-name`|Specify server name from server list to auto connect|
 
 ## Take a Look!
 
