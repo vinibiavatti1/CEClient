@@ -1,5 +1,5 @@
-$command = "start ceclient.exe --auto-connect"
-Invoke-Expression($command)
+$command = "./ceclient.exe --auto-connect"
+Invoke-Expression $command
 
 # Use -h or --help argument to check the valid arguments
 # start ceclient.exe --help
